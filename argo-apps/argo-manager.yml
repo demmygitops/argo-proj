@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argo-manager
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  source:
+    path: argo-apps
+    repoURL: https://github.com/demmygitops/argo-proj.git
+    targetRevision: HEAD
+      
+
