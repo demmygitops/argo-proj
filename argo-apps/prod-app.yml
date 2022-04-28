@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prod-apps
+spec:
+  destination:
+    namespace: argocd
+    server: https://kubernetes.default.svc
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+  source:
+    path: helm
+    repoURL: https://github.com/demmygitops/argo-proj.git
+    targetRevision: HEAD
+    helm:
+      valueFiles:
+      - env/values-prod.yml
+      
