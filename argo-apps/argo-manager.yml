@@ -10,9 +10,9 @@ spec:
   syncPolicy:
     automated:
       prune: true
+    syncOptions:
+      - CreateNamespace=true
   source:
     path: argo-apps
     repoURL: https://github.com/demmygitops/argo-proj.git
     targetRevision: HEAD
-      
-
