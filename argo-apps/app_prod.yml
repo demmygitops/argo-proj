@@ -16,5 +16,6 @@ spec:
     targetRevision: HEAD
     helm:
       valueFiles:
-      - env/values-dev.yml
+      - env/values-prod.yml
       
+
